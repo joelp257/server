@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import json
 import pandas as pd
 from pycaret.classification import *
@@ -24,7 +24,8 @@ def json_value():
 @app.route('/query', methods=['GET'])
 def process_query():
     try:
-        data = json_value()
+        #data = json_value()
+        data = request.get_json()
         preg = data.get('Pregnancies')
         glu = data.get('Glucose')
         blo = data.get('BloodPressure')
