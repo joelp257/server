@@ -2,3 +2,4 @@ flask==3.0.2
 scikit-learn==1.4.1.post1
 pandas==2.1.0
 pycaret==3.3.0
+Flask-Cors==1.10.3
