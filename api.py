@@ -5,26 +5,9 @@ from pycaret.classification import *
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
 
 
-def json_value():
-    input_data = {
-        "Pregnancies": 6,
-        "Glucose": 148,
-        "BloodPressure": 82,
-        "SkinThickness": 25,
-        "Insulin": 0,
-        "BMI": 33.6,
-        "DiabetesPedigreeFunction": 0.627,
-        "Age": 50,
-        "Outcome": 1,
-    }
-    #json_payload = json.dumps(input_data)
-    #return json_payload
-    return input_data
-
-@app.route('/query', methods=['GET'])
+@app.route('/query_d', methods=['GET'])
 def process_query():
     try:
         #data = json_value()

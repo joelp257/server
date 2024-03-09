@@ -36,11 +36,11 @@ def process_query():
         out = data.get('Outcome')
         print(glu)
 
-        glucol_names = pd.read_pickle('D:/col_names.pkl')
+        glucol_names = pd.read_pickle('./col_names.pkl')
         print(glucol_names)
         predictions=[preg,glu,blo,ski,ins,bmi,dia,age,out]
         df=pd.DataFrame([predictions],columns=glucol_names)
-        model_loaded=load_model('D:/best_model')
+        model_loaded=load_model('./best_model')
         predicted = predict_model(model_loaded,data=df)
         prediction_list = predicted['prediction_label'].tolist()
 
