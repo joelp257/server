@@ -33,5 +33,4 @@ best_model = clf.compare_models()
 col_names_list=data.columns.tolist()
 pd.Series(col_names_list).to_pickle('d_pred_col_names.pkl')
 
-with open('d_pred.pickle', 'wb') as handle:
-    pickle.dump(best_model, handle, protocol=pickle.HIGHEST_PROTOCOL)
+save_model(best_model,"d_pred")

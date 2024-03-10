@@ -37,5 +37,4 @@ pd.Series(col_names_list).to_pickle('chol_pred_col_names.pkl')
 
 evaluate_model(best_model)
 
-with open('chol_pred.pickle', 'wb') as handle:
-    pickle.dump(best_model, handle, protocol=pickle.HIGHEST_PROTOCOL)
+save_model(best_model,"chol_pred")
