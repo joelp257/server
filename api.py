@@ -7,9 +7,15 @@ from pycaret.regression import *
 app = Flask(__name__)
 
 
-@app.route('/test', methods=['GET'])
+@app.route('/')
+def index():
+    return 'Index Page'
+
+
+@app.route('/test')
 def process_test_query():
-    return "success"
+    return 'success'
+
 
 @app.route('/diabetes', methods=['GET'])
 def process_diabetic_query():
