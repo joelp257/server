@@ -29,11 +29,11 @@ def process_diabetic_query():
         dia = data.get('DiabetesPedigreeFunction')
         age = data.get('Age')
 
-        col_names = pd.read_pickle('./d_pred_col_names.pkl')
+        col_names = pd.read_pickle('./diabetes_prediction/d_pred_col_names.pkl')
         print(col_names)
         predictions=[glu,blo,ski,ins,bmi,dia,age,1]
         df=pd.DataFrame([predictions],columns=col_names)
-        model_loaded=load_model('./d_pred.pickle')
+        model_loaded=load_model('./diabetes_prediction/d_pred.pickle')
         predicted = predict_model(model_loaded,data=df)
 
         response_data = {
@@ -55,11 +55,11 @@ def process_chol_query():
         cp = data.get('cp')
         trest = data.get('trestbps')
 
-        col_names = pd.read_pickle('./chol_pred_col_names.pkl')
+        col_names = pd.read_pickle('./cholestreol_prediction/chol_pred_col_names.pkl')
         print(col_names)
         predictions=[age,sex,cp,trest,0]
         df=pd.DataFrame([predictions],columns=col_names)
-        model_loaded=load_model('./chol_pred.pickle')
+        model_loaded=load_model('./cholestreol_prediction/chol_pred.pickle')
         predicted = predict_model(model_loaded,data=df)
 
         response_data = {
@@ -84,11 +84,11 @@ def process_bp_query():
         dia = data.get('DiabetesPedigreeFunction')
         age = data.get('Age')
 
-        col_names = pd.read_pickle('./bp_pred_col_names.pkl')
+        col_names = pd.read_pickle('./bp_prediction/bp_pred_col_names.pkl')
         print(col_names)
         predictions=[glu,0,ski,ins,bmi,dia,age]
         df=pd.DataFrame([predictions],columns=col_names)
-        model_loaded=load_model('./bp_pred.pickle')
+        model_loaded=load_model('./bp_prediction/bp_pred.pickle')
         predicted = predict_model(model_loaded,data=df)
 
         response_data = {
